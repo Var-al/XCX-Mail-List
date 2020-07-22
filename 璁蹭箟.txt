@@ -1,0 +1,35 @@
+小程序 其实就是高仿的 web界面
+html   => wxml 页面
+css    => wxss css样式文件
+js     => js 
+json   => json
+
+wxml 自己封装的html 
+div -> view 
+p   -> text
+
+
+app.js    小程序入口主要文件
+app.json  小程序页面配置文件
+app.wxss  全局的样式文件 
+pages     页面目录
+project.config.json  小程序配置文件
+sitemap.json  站点地图
+utils   工具目录
+
+
+小程序默认的界面
+
+pages 放的是所有界面
+
+界面规范   首页   例如：index
+
+  /pages/index
+      index.wxml
+      index.wxss
+      index.json
+      index.js
+
+一个界面就是一个文件夹
+
+底部导航栏 最少是2个 最多5个

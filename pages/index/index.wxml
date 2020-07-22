@@ -1,0 +1,54 @@
+<view class="container">
+    <!--分类选择-->
+    <view class="type-container">
+        <scroll-view class="type-navbar" scroll-x="true">
+            <view bindtap="clickTab" data-cateid="0" class="type-box">
+                <view wx:if="{{cateid == 0}}" class="type-navbar-item type-item-on">
+                    全部
+                </view>
+                <view wx:else class="type-navbar-item">
+                    全部
+                </view>
+            </view>
+            <view bindtap="clickTab" data-cateid="{{item.id}}" class="type-box" wx:for="{{CateArray}}" wx:key="index">
+                <view wx:if="{{cateid == item.id}}" class="type-navbar-item type-item-on">
+                    {{item.name}}
+                </view>
+                <view wx:else class="type-navbar-item">
+                    {{item.name}}
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <!--名称搜索-->
+    <view class="search-view">
+        <view class="search-content">
+            <image src="/images/search-pic.png" class="search-icon" />
+
+            <input placeholder="请输入名字" class="search-input" maxlength="30" confirm-type="搜索" />
+
+            <button class='search-btn' size='mini'>搜索</button>
+        </view>
+    </view>
+
+    <!--列表-->
+    <view class="list">
+        <navigator url="/pages/edit/edit?id={{item.id}}" wx:for="{{personlist}}" wx:key="index" class="card short-card">
+            <view><text class="title">{{item.username}}</text></view>
+            <view><text class="intro">{{item.content}}</text></view>
+            <view>
+                <image src="/images/phone-icon.png" style="width:20rpx;height:20rpx;"></image>
+                <text class="intro">  电话：{{item.phone}}</text>
+            </view>
+            <view class="phone">
+                <image src="/images/phone-red.png" style="width:40rpx;height:40rpx;">
+                </image>
+            </view>
+        </navigator>
+    </view>
+
+    <view wx:if="{{noData}}" class="weui-loadmore weui-loadmore_line">
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">到底啦</view>
+   </view>
+</view>

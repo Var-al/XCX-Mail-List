@@ -1,0 +1,5 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText":"通讯录列表",
+  "enablePullDownRefresh":true
+}
